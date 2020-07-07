@@ -1,3 +1,4 @@
+using System.Linq;
 using PooLojaVirtual.Models;
 using Xunit;
 
@@ -51,7 +52,7 @@ namespace PooLojaVirtual.Tests
             carrinho.Adicionar(produto1, 2);
             carrinho.Adicionar(produto2, 3);
 
-            Assert.Equal(2, carrinho.Itens.Count);
+            Assert.Equal(2, carrinho.Itens.Count());
             var item1 = Assert.Single(carrinho.Itens, item => item.Produto.Equals(produto1));
             var item2 = Assert.Single(carrinho.Itens, item => item.Produto.Equals(produto2));
             Assert.Equal(4000, item1.Subtotal);

@@ -7,7 +7,7 @@ namespace PooLojaVirtual.Models
     {
         public Cliente Cliente { get; set; }
         public DateTime Data { get; set; } = DateTime.Now;
-        public List<ItemCarrinho> Itens { get; set; } = new List<ItemCarrinho>();
+        public IEnumerable<ItemCarrinho> Itens { get; set; } = new List<ItemCarrinho>();
         public double Valor { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
     }

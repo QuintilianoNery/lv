@@ -6,7 +6,7 @@
 
 <h4 class="text-center">Seu carrinho</h4>
 
-@if (Model.Itens.Count == 0)
+@if (Model.Itens.Count() == 0)
 {
   <p class="text-center">Seu Carrinho está vazio</p>
   <p class="text-center"><a asp-controller="Home" asp-action="Index">Continuar comprando</a></p>

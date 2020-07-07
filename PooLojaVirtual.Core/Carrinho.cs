@@ -5,7 +5,9 @@ namespace PooLojaVirtual.Models
 {
     public class Carrinho : Entidade
     {
-        public List<ItemCarrinho> Itens { get; set; } = new List<ItemCarrinho>();
+        private List<ItemCarrinho> itens = new List<ItemCarrinho>();
+
+        public IEnumerable<ItemCarrinho> Itens => itens;
 
         public double Total
         {
@@ -17,7 +19,7 @@ namespace PooLojaVirtual.Models
 
         public void Adicionar(Produto produto, int quantidade)
         {
-            Itens.Add(new ItemCarrinho(produto, quantidade));
+            itens.Add(new ItemCarrinho(produto, quantidade));
         }
 
         public void Remover(int idProduto)
@@ -25,7 +27,7 @@ namespace PooLojaVirtual.Models
             var itemNoCarrinho = Itens.FirstOrDefault(item => item.Produto.Id == idProduto);
             if (itemNoCarrinho != null)
             {
-                Itens.Remove(itemNoCarrinho);
+                itens.Remove(itemNoCarrinho);
             }
         }
     }
