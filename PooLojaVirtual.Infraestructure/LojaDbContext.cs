@@ -15,7 +15,7 @@ namespace PooLojaVirtual.Infraestructure
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-           => options.UseSqlite(_configuration.GetConnectionString("LojaDbContext"));
+           => options.UseSqlServer(_configuration.GetConnectionString("LojaDbContext"));
 
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<FormaPagamento> FormasPagamento { get; set; }
