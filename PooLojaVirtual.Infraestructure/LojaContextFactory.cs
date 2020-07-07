@@ -12,7 +12,7 @@ namespace PooLojaVirtual.Infraestructure
             var optionsBuilder = new DbContextOptionsBuilder<LojaDbContext>();
             optionsBuilder.UseSqlServer(configuration.GetConnectionString("LojaDbContext"));
 
-            return new LojaDbContext(optionsBuilder.Options);
+            return new LojaDbContext(optionsBuilder.Options, configuration);
         }
     }
 }

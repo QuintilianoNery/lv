@@ -7,7 +7,8 @@ namespace PooLojaVirtual.Infraestructure
     {
         private readonly IConfiguration _configuration;
 
-        public LojaSqLiteDbContext(DbContextOptions<LojaDbContext> options, IConfiguration configuration) : base(options)
+        public LojaSqLiteDbContext(DbContextOptions<LojaDbContext> options, IConfiguration configuration) 
+            : base(options, configuration)
         {
             _configuration = configuration;
         }
