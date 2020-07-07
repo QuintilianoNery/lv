@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace PooLojaVirtual.Models
@@ -13,23 +11,13 @@ namespace PooLojaVirtual.Models
         {
             get
             {
-                return Itens.Sum(item => item.Subtotal);
+                return Itens.Sum(item => item.Produto.Preco);
             }
         }
 
         public void Adicionar(Produto produto, int quantidade)
         {
-            var itemNoCarrinho = Itens.FirstOrDefault(item => item.Produto.Id == produto.Id);
-
-            if (itemNoCarrinho == null)
-            {
-                var item = new ItemCarrinho(produto, quantidade);
-                Itens.Add(item);
-            }
-            else
-            {
-                itemNoCarrinho.Quantidade += quantidade;
-            }
+            Itens.Add(new ItemCarrinho(produto, quantidade));
         }
 
         public void Remover(int idProduto)

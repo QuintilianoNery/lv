@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using PooLojaVirtual.Models;
 using Xunit;
 
@@ -26,22 +24,6 @@ namespace PooLojaVirtual.Tests
                 Nome = "Notebook"
             };
 
-            carrinho.Adicionar(produto, 1);
-
-            Assert.Single(carrinho.Itens);
-        }
-
-        [Fact]
-        public void Carrinho_Nao_Deve_Duplicar_Produto()
-        {
-            var carrinho = new Carrinho();
-            var produto = new Produto
-            {
-                Id = 1,
-                Nome = "Notebook"
-            };
-
-            carrinho.Adicionar(produto, 1);
             carrinho.Adicionar(produto, 1);
 
             Assert.Single(carrinho.Itens);
