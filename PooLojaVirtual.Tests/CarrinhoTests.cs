@@ -75,5 +75,23 @@ namespace PooLojaVirtual.Tests
             carrinho.Remover(produto.Id);
             Assert.Empty(carrinho.Itens);
         }
+
+        [Fact]
+        public void Carrinho_Nao_Deve_Repetir_Produtos()
+        {
+            var carrinho = new Carrinho();
+            var produto = new Produto
+            {
+                Id = 1,
+                Nome = "Notebook",
+                Preco = 2500
+            };
+
+            carrinho.Adicionar(produto, 1);
+            carrinho.Adicionar(produto, 1);
+
+            var item = Assert.Single(carrinho.Itens);
+            Assert.Equal(2, item.Quantidade);
+        }
     }
 }
