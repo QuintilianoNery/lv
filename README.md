@@ -1,12 +1,15 @@
-# poo-loja-virtual
+# Desafio seu software no ar em uma semana
 
-Projeto criado para a palestra sobre Programação Orientada a Objetos no dia a dia do Programador, na faculdade Multivix em 22/04/2019.
+## Bem vindo ao desafio!
 
-Slides: https://www.slideshare.net/evandroamparo/orientao-a-objetos-no-dia-a-dia-do-programador
+Aqui você vai aprender alguns dos conhecimentos e habilidades que qualquer desenvolvedor precisa saber para entregar software de qualidade.
 
-Para executar:
+Este projeto foi criado especialmente para uma  palestra sobre Programação Orientada a Objetos que apresentei em 2019. 
 
-  - Instale o .Net Core SDK em https://dotnet.microsoft.com/download 
-  - No prompt de comando, dentro da pasta PooLojaVirtual.Web, digite:
+Agora, ele foi atualizado e adaptado para que você possa aprender vários outros conceitos desde o código até a implantação na nuvem.
 
-`dotnet run`
+Depois de completar cada etapa do desafio você terá aprendido sobre versionamento do código, testes automatizados, entrega contínua e muito mais.
+
+Mais informações em: https://evandroamparo.orbitlearn.online/desafio-dev
+
+Bons estudos!
