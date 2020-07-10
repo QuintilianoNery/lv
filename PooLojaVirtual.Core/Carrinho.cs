@@ -13,21 +13,13 @@ namespace PooLojaVirtual.Models
         {
             get
             {
-                return Itens.Sum(item => item.Subtotal);
+                return Itens.Sum(item => item.Produto.Preco);
             }
         }
 
         public void Adicionar(Produto produto, int quantidade)
         {
-            var itemNoCarrinho = itens.Find(item => item.Produto.Id == produto.Id);
-            if (itemNoCarrinho == null)
-            {
-                itens.Add(new ItemCarrinho(produto, quantidade));
-            }
-            else
-            {
-                itemNoCarrinho.Quantidade += quantidade;
-            }
+            itens.Add(new ItemCarrinho(produto, quantidade));
         }
 
         public void Remover(int idProduto)
